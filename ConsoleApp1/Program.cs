@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -50,19 +45,20 @@ namespace ConsoleApp1
                             break;
                     }
 
+                    Console.WriteLine();
                     Console.WriteLine("Выберите направление сортировки:");
-                    Console.WriteLine(String.Format("1 - {0}", result_table.DirectionSortName((int)EDirectionSort.Left)));
-                    Console.WriteLine(String.Format("2 - {0}", result_table.DirectionSortName((int)EDirectionSort.Right)));
+                    Console.WriteLine(String.Format("1 - {0}", result_table.DirectionSortName((int)ESortDirection.Left)));
+                    Console.WriteLine(String.Format("2 - {0}", result_table.DirectionSortName((int)ESortDirection.Right)));
                     Console.WriteLine("3 - Случайная");
                     choice = int.Parse(Console.ReadLine());
                     int direction;
                     switch (choice)
                     {
                         case 1:
-                            direction = (int)EDirectionSort.Left;
+                            direction = (int)ESortDirection.Left;
                             break;
                         case 2:
-                            direction = (int)EDirectionSort.Right;
+                            direction = (int)ESortDirection.Right;
                             break;
                         case 3:
                             direction = rnd.Next(1, 3);
@@ -82,11 +78,12 @@ namespace ConsoleApp1
                             break;
                     }
 
+                    Console.WriteLine();
                     Console.WriteLine("отсортированный массив:");
                     ReadMas(a);
                     Console.WriteLine();
-                    Console.WriteLine(result_table.result_row_heading());
-                    Console.WriteLine(result_table.result_row());
+                    Console.WriteLine(result_table.Result_row_heading());
+                    Console.WriteLine(result_table.Result_row());
                     Console.WriteLine();
                 }
                
@@ -104,6 +101,7 @@ namespace ConsoleApp1
             {
                 Console.Write(a[i] + " ");
             }
+            Console.WriteLine();
             Console.WriteLine();
         }
 

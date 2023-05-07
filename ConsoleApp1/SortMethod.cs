@@ -29,7 +29,7 @@
                 count_comparison = count_comparison,
                 count_permutation = count_permutation,
                 sort_method = ESortMethod.Bubble,
-                direction_sort = (EDirectionSort)direction_sort
+                direction_sort = (ESortDirection)direction_sort
             };
             return result;
         }
@@ -67,8 +67,8 @@
                 count_comparison = count_comparison,
                 count_permutation = count_permutation,
                 sort_method = ESortMethod.Shake,
-                direction_sort = (EDirectionSort)direction_sort
-            };
+                direction_sort = (ESortDirection)direction_sort
+            };  
             return result;
         }
     }

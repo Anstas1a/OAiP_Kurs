@@ -12,7 +12,7 @@ namespace ConsoleApp1
         Shake
     }
 
-    public enum EDirectionSort
+    public enum ESortDirection
     {
         Right = 1,
         Left
@@ -20,13 +20,12 @@ namespace ConsoleApp1
 
     internal class ResultTable
     {
-        public int[] sort_mas { get; set; }
         public int count_comparison { get; set; }
         public ESortMethod sort_method { get; set; }
         public int count_permutation { get; set; }
-        public EDirectionSort direction_sort { get; set; }
+        public ESortDirection direction_sort { get; set; }
 
-        public string result_row()
+        public string Result_row()
         {
             return string.Format("|  {0}  |  {1}  |  {2}  |  {3}  |", 
                 count_comparison,
@@ -36,7 +35,7 @@ namespace ConsoleApp1
                 );
         }
 
-        public string result_row_heading()
+        public string Result_row_heading()
         {
             return "|  Сравнений  |  Перестановок  |  Метод сортировки  |  Направление сортировки  |";
         }
@@ -58,9 +57,9 @@ namespace ConsoleApp1
         {
             switch (direction)
             {
-                case (int)EDirectionSort.Right:
+                case (int)ESortDirection.Right:
                     return "По возрастанию";
-                case (int)EDirectionSort.Left:
+                case (int)ESortDirection.Left:
                     return "По убыванию";
                 default:
                     return "";
