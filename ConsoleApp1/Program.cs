@@ -110,14 +110,37 @@ namespace ConsoleApp1
             int[] a;
             using (StreamReader reader = new StreamReader(path))
             {
-                int size = int.Parse(reader.ReadLine());
-
-                a = new int[size];
-
-                var line_mas = reader.ReadLine().Split(' ');
-                for (int i = 0; i < line_mas.Length; i++)
+                var line_size = reader.ReadLine();
+                if (line_size != null)
                 {
-                    a[i] = int.Parse(line_mas[i]);
+                    int size = int.Parse(line_size);
+
+                    a = new int[size];
+
+                    var line = reader.ReadLine();
+                    if (line != null)
+                    {
+                        var line_mas = line.Split(' ');
+                        if (size == line_mas.Length)
+                        {
+                            for (int i = 0; i < line_mas.Length; i++)
+                            {
+                                a[i] = int.Parse(line_mas[i]);
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Некорректный размер массива");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Некорректный входные данные");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Файл не может быть пустым");
                 }
             }
 
