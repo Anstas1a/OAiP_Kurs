@@ -39,26 +39,31 @@
             var count_comparison = 0;
             var count_permutation = 0;
             var isSort = false;
-            var left = 0;
-            var right = a.Length-1;
+            var left_index = 0;
+            var right_index = a.Length-1;
             do
             {
+                var left = left_index;
+                var right = right_index;
                 isSort = false;
-                for (int i = left; i < right; i++)
+                while (left != right)
                 {
+                    int next_numb = left > right ? left - 1 : left + 1;
                     count_comparison++;
-                    if (direction_sort == 1 ? a[i] > a[i + 1] : a[i] < a[i + 1])
+                    if (direction_sort == 1 ? a[left] > a[next_numb] : a[left] < a[next_numb])
                     {
-                        var num = a[i + 1];
-                        a[i + 1] = a[i];
-                        a[i] = num;
+                        var num = a[next_numb];
+                        a[next_numb] = a[left];
+                        a[left] = num;
                         isSort = true;
                         count_permutation++;
                     }
+                    left = next_numb;
                 }
-                var numDirection = right;
-                right = left;
-                left = numDirection;
+                int num_direction = left_index;
+                left_index = right_index;
+                right_index = num_direction;
+                direction_sort = direction_sort == 1 ? 2 : 1;
 
             } while (isSort);
 
