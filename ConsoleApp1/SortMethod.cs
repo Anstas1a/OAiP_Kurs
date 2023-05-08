@@ -36,6 +36,12 @@
 
         public ResultTable Shake(int[] a, int direction_sort)
         {
+            var result = new ResultTable()
+            {
+                sort_method = ESortMethod.Shake,
+                direction_sort = (ESortDirection)direction_sort
+            };
+
             var count_comparison = 0;
             var count_permutation = 0;
             var isSort = false;
@@ -67,13 +73,8 @@
 
             } while (isSort);
 
-            var result = new ResultTable()
-            {
-                count_comparison = count_comparison,
-                count_permutation = count_permutation,
-                sort_method = ESortMethod.Shake,
-                direction_sort = (ESortDirection)direction_sort
-            };  
+            result.count_comparison = count_comparison;
+            result.count_permutation = count_permutation;
             return result;
         }
     }
