@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    internal class SortMethod
+    public class SortMethod
     {
         public ResultTable Bubble(int[] a, int direction_sort)
         {

@@ -115,6 +115,12 @@ namespace ConsoleApp1
                 {
                     int size = int.Parse(line_size);
 
+
+                    if (size <= 0)
+                    {
+                        throw new Exception("Некорректный размер массива");
+                    }
+
                     a = new int[size];
 
                     var line = reader.ReadLine();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     public enum ESortMethod
     {
@@ -18,7 +12,7 @@ namespace ConsoleApp1
         Left
     }
 
-    internal class ResultTable
+    public class ResultTable
     {
         public int count_comparison { get; set; }
         public ESortMethod sort_method { get; set; }
